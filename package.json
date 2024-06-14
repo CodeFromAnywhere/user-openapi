@@ -12,6 +12,7 @@
     "dev": "concurrently \"next dev\" \"npm:watch-types\""
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.1.5",
     "actionschema": "^0.0.34",
     "ajv": "^8.12.0",
     "from-anywhere": "^0.0.29",

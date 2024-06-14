@@ -17,3 +17,21 @@ Having this abstraction as a modular wrapper can be very beneficial because it a
 This project is part of the bigger [ActionSchema toolkit](https://github.com/CodeFromAnywhere).
 
 Let's raise the bar for agents.
+
+# TODO
+
+Clerk is by far the best known one that has o-auth and nextjs integration out of the box. This should be easy.
+
+This nextjs project should allow anyone to setup their user-openapi proxy:
+
+- Make `create,read,update,delete`: CRUD endpoints to create new user-openapi proxy by passing `{ slug, openapiUrl, openapiAuthToken, adminToken, clerkSecretKey, clerkProjectId }` (do this in data.actionschema.com)
+- Serve original api at `[slug]/openapi.json` and proxy the traffic without wall first.
+- Enhance that openapi by adding the oauth2 standard with links to login/signup etc which are served at `login.actionschema.com/[slug]/login` which basically serve nice clerk components for that.
+- api requests should respond with unauthorized 401 or pass the authorized userId to the original API
+- should be compatible with OpenAI GPTs (now, I have an audience!)
+- can I auto-signup when receiving a message in whatsapp? creating or finding a clerk-user automatically based on the phonenumber? how would that work? I need clerk-based user-management. I need a thread-messages CRUD with a split on the userid. Then I should be good!
+
+# Later
+
+- ratelimits
+- pricing
